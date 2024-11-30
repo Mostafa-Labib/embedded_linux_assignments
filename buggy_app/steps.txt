@@ -1,0 +1,12 @@
+1- run "g++ buggyApp.cpp -o buggyApp"
+2- run "strace ./buggyApp"
+3- found error
+openat(AT_FDCWD, "sample.txt", O_RDONLY) = -1 ENOENT (No such file or directory)
+write(2, "Error: File not found!\n", 23Error: File not found!
+) = 23
+exit_group(1)                           = ?
++++ exited with 1 +++
+4- added file sample.txt 
+5- run "g++ buggyApp.cpp -o buggyApp"
+6- run "strace ./buggyApp"
+7- no error
